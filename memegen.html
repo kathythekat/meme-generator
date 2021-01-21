@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>
+            Meme Generator
+        </title>
+        <link rel="stylesheet" href="memegen.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-container">
+            <div>
+                <h1>Generate Your Meme Here!</h1>
+            </div>
+
+            <div class="meme-form">
+                <form id="form">
+                    <!--Image for Meme-->
+                    <label for="img-link">Image URL</label>
+                    <input class="input-url" type="url" id="img-link" name="img-link"> <br>
+
+                    <!--Top Text-->
+                    <label for="top-txt">Top Text</label>
+                    <input class="input-top" type="text" id="top-txt" name="top-txt"> <br>
+
+                    <!--Bottom Text-->
+                    <label for="bottom-txt">Bottom Text</label>
+                    <input class="input-bottom" type="text" id="bottom-txt" name="bottom-txt"><br>
+
+                    <!--Submit button-->
+                    <input type="submit" id="submit" value="Submit">
+
+                </form>
+            </div>
+
+        </div>
+
+        <div id="memecontainer" class="meme-container">
+
+            <div id="meme-img" class="meme-image"> 
+                
+                
+            </div>
+
+        </div>
+
+    <script src="memegen.js"></script>
+
+    </body>
+
+</html>
