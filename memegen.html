@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            Meme Generator
+            Kat's Meme Generator
         </title>
         <link rel="stylesheet" href="memegen.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,37 +12,40 @@
             <div>
                 <h1>Generate Your Meme Here!</h1>
             </div>
-
+            <!--MEME FORM-->
             <div class="meme-form">
-                <form id="form">
+                <form class="memeform" id="form">
                     <!--Image for Meme-->
-                    <label for="img-link">Image URL</label>
+                    <label class="form-labels" for="img-link">Image URL:</label>
                     <input class="input-url" type="url" id="img-link" name="img-link"> <br>
 
                     <!--Top Text-->
-                    <label for="top-txt">Top Text</label>
+                    <label class="form-labels" for="top-txt">Top Text:</label>
                     <input class="input-top" type="text" id="top-txt" name="top-txt"> <br>
 
                     <!--Bottom Text-->
-                    <label for="bottom-txt">Bottom Text</label>
+                    <label class="form-labels" for="bottom-txt">Bottom Text:</label>
                     <input class="input-bottom" type="text" id="bottom-txt" name="bottom-txt"><br>
 
                     <!--Submit button-->
-                    <input type="submit" id="submit" value="Submit">
+                    <input type="submit" class="submit-button" id="submit" value="Submit">
 
                 </form>
             </div>
 
-        </div>
+            <!--MEME CONTAINER -->
+            <div id="memecontainer" class="meme-container">
 
-        <div id="memecontainer" class="meme-container">
-
-            <div id="meme-img" class="meme-image"> 
-                
-                
+                <div id="meme-img" class="meme-image"> 
+                    
+                    
+                </div>
+    
             </div>
 
         </div>
+
+       
 
     <script src="memegen.js"></script>
 

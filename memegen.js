@@ -10,45 +10,65 @@ form.addEventListener('submit',function(e){
     memeDiv.classList.add('meme-image');
     memeDiv.id = `meme-${memeCounter}`;
     memeCounter++;
+    console.log(memeDiv.id);
 
     //image for meme
     const imgUrl = document.getElementById('img-link').value;
     const img = document.createElement('img');
     img.src = imgUrl;
-    memeDiv.appendChild(img);
-
+    
+    //top text
     const topText = document.createElement('div');
     topText.classList.add('text', 'top-text');
     topText.innerText = document.getElementById('top-txt').value;
-    memeDiv.appendChild(topText);
     
+    //bottom text
     const bottomText = document.createElement('div');
     bottomText.classList.add('text', 'bottom-text');
     bottomText.innerText = document.getElementById('bottom-txt').value;
+    
+    //delete button on meme 
+    const deleteButton = document.createElement('div');
+    deleteButton.classList.add('delete-x');
+    deleteButton.innerText = 'X';
+    
+    //add each element to memeDiv and add each memeDiv to memeContainer
+    memeContainer.appendChild(memeDiv);
+    memeDiv.appendChild(img);
+    memeDiv.appendChild(topText);
     memeDiv.appendChild(bottomText);
+    memeDiv.appendChild(deleteButton);
 
-    const deleteMeme = document.createElement('div');
-    deleteMeme.classList.add('delete-x');
-    deleteMeme.innerText = 'X';
-    memeDiv.appendChild(deleteMeme);
+    console.log(memeDiv.parentElement);
 
+    //event listeners for delete button
     memeDiv.addEventListener('mouseover', function() {
-        deleteMeme.classList.add('delete-x--open');
+        deleteButton.classList.add('delete-x--open');
        
     })
 
     memeDiv.addEventListener('mouseout', function() {
-        deleteMeme.classList.remove('delete-x--open');
+        deleteButton.classList.remove('delete-x--open');
     })
 
-    deleteMeme.addEventListener('click', function(event) {
+    
+    memeDiv.addEventListener('click', removeMeme);
+    function removeMeme(event) {
+        if (event.target.classList.contains('delete-x--open')) {
+            console.log('clicked');
+            const memeDivEl = event.target.parentElement;
+            memeContainer.removeChild(memeDivEl);
+        }   
+    }
+
+       /*  console.log('clicked');
         const buttonEl = event.target;
         const memeDivEl = buttonEl.parent;
-        memeContainer.removeChild(memeDiv);
-    })
+        memeContainer.removeChild(); */
+ 
 
 
-    memeContainer.appendChild(memeDiv);
+  
 
 
     form.reset();
