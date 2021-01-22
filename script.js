@@ -39,7 +39,18 @@ form.addEventListener('submit',function(e){
     memeDiv.appendChild(bottomText);
     memeDiv.appendChild(deleteButton);
 
-    console.log(memeDiv.parentElement);
+    //scrolls to bottom of each meme generated 
+    
+    memeDiv.scrollIntoView(false);
+
+
+    //FORM VALIDATION- IF FIELDS NOT ENTERED 
+
+   /*  if (bottomText.value === '' && topText.value === '' && imgUrl.value === '') {
+        console.log('nothing');
+        memeDiv.style.display='none';
+    } */
+
 
     //event listeners for delete button
     memeDiv.addEventListener('mouseover', function() {
@@ -60,19 +71,34 @@ form.addEventListener('submit',function(e){
             memeContainer.removeChild(memeDivEl);
         }   
     }
-
-       /*  console.log('clicked');
-        const buttonEl = event.target;
-        const memeDivEl = buttonEl.parent;
-        memeContainer.removeChild(); */
- 
-
-
-  
-
-
     form.reset();
 
 })
+
+//Scroll to top functions
+const scrollButton = document.getElementById('scrollBtn');
+
+const mainEl = document.documentElement;
+
+window.addEventListener('scroll', activateScroll);
+
+function activateScroll() {
+    if(window.pageYOffset > 200) {
+        scrollButton.style.display = 'block';
+    } else {
+        scrollButton.style.display = 'none';
+    }
+}
+
+function scrollToTop() {
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+scrollButton.addEventListener('click', scrollToTop);
+
+
 
 
