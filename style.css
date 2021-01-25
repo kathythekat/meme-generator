@@ -56,6 +56,7 @@ body {
     box-sizing: border-box;
     padding: 12px 20px;
     margin: 8px 0;
+    -webkit-appearance: none;
     box-shadow: 4px 4px 2px 0px #888d8f;
     border: 0;
     border-radius: 8px;
@@ -71,6 +72,7 @@ body {
     border-radius: 12px;
     align-self:center;
     margin-bottom: 8px;
+    -webkit-appearance: none;
     box-shadow: 4px 4px 4px #616361;
     border: 0;
     cursor: pointer;
@@ -79,7 +81,7 @@ body {
 
 .submit-button:hover {
     /* opacity: 0.8; */
-    box-shadow: 5px 5px 5px #8f1c62; 
+    box-shadow: 5px 5px 5px #bcf65a; 
 }
 /* Styling the meme container */
 
@@ -88,7 +90,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    max-width:100%;
 }
 
 .memeform {
@@ -97,14 +99,15 @@ body {
     margin: 4px;
 }
 
-.meme-image {
+/* .meme-image {
     display:inline-block;   
     position: relative;
     width: 480px;
     margin-bottom: 32px;
     text-align: center;
     animation: meme-display ease-in-out 400ms;
-}
+    background-color: black;
+} */
 
 @keyframes meme-display {
     0% {
@@ -116,26 +119,29 @@ body {
       }
 }
 
-/* img {
-    height: auto;
-   width: 480px;
-} */
-
 .meme-img {
-    height: 360px;
+    position:relative;
+    height: 320px;
+    width: 480px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    margin: 20px;
+    text-align: center;
+    animation: meme-display ease-in-out 400ms;
+    background-color: black;
+    z-index:1;
 }
 
-img:hover {
-    opacity:0.7;
+.meme-img:hover {
+    opacity: 0.8;
 }
 
 @supports (-webkit-text-stroke: 1.5px black) {
     .text {
-        width: 500px;
-        font-size: 60px;
+        width: 100%;
+        align-items: center;
+        font-size: 54px;
         font-family: Impact, Arial;
         color: black;
         -webkit-text-fill-color: white;
@@ -146,13 +152,11 @@ img:hover {
 .top-text  {
     position: absolute;
     top:0;
-
 }
 
 .bottom-text {
     position: absolute;
     bottom: 0;
-    
 }
 
 .delete-x {
@@ -180,7 +184,7 @@ img:hover {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    z-index: 9;
+    z-index: 2;
     
 }
 #scrollBtn:hover {
@@ -188,6 +192,25 @@ img:hover {
     cursor: pointer;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    width:100%;
+    font-family: Ubuntu, sans-serif;
+    margin-bottom: 16px;
+}
+
+.kat-link {
+    text-decoration: none;
+    color: white;
+}
+
+.kat-link:hover {
+    color:#bcf65a;
+}
 
 @media screen and (max-width: 800px) {
     .main-container {
@@ -207,9 +230,9 @@ img:hover {
         max-width: 360px;
     }
 
-    .meme-image{
-      max-width:100%;
-      margin:12px;
+    .meme-img {
+        max-height: 240px;
+        max-width:360px;
     }
 }
 

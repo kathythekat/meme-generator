@@ -31,15 +31,15 @@ form.addEventListener('submit',function(e){
     const deleteButton = document.createElement('div');
     deleteButton.classList.add('delete-x');
     deleteButton.innerText = 'X';
-/* 
+
     divImg.appendChild(topText);
     divImg.appendChild(bottomText);
-    divImg.appendChild(deleteButton); */
+    divImg.appendChild(deleteButton);
 
       memeDiv.appendChild(divImg);
-      memeDiv.appendChild(topText);
+     /*  memeDiv.appendChild(topText);
       memeDiv.appendChild(bottomText);
-      memeDiv.appendChild(deleteButton); 
+      memeDiv.appendChild(deleteButton);  */
   
     //add each element to memeDiv and add each memeDiv to memeContainer
     memeContainer.appendChild(memeDiv);
@@ -53,7 +53,26 @@ form.addEventListener('submit',function(e){
    
 
     //event listeners for delete button
-    memeDiv.addEventListener('mouseover', function() {
+    divImg.addEventListener('mouseover', function() {
+        deleteButton.classList.add('delete-x--open');
+       
+    })
+
+    divImg.addEventListener('mouseout', function() {
+        deleteButton.classList.remove('delete-x--open');
+    })
+
+    
+   divImg.addEventListener('click', removeMeme);
+    function removeMeme(event) {
+        if (event.target.classList.contains('delete-x--open')) {
+            const memeDivEl = event.target.parentElement;
+            memeDiv.removeChild(memeDivEl);
+        }   
+    }
+
+
+    /* memeDiv.addEventListener('mouseover', function() {
         deleteButton.classList.add('delete-x--open');
        
     })
@@ -66,11 +85,10 @@ form.addEventListener('submit',function(e){
     memeDiv.addEventListener('click', removeMeme);
     function removeMeme(event) {
         if (event.target.classList.contains('delete-x--open')) {
-            console.log('clicked');
             const memeDivEl = event.target.parentElement;
             memeContainer.removeChild(memeDivEl);
         }   
-    }
+    } */
     form.reset();
 
 })
