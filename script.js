@@ -10,18 +10,18 @@ form.addEventListener('submit',function(e){
     memeDiv.classList.add('meme-image');
     memeDiv.id = `meme-${memeCounter}`;
     memeCounter++;
-    console.log(memeDiv.id);
 
-    //image for meme
+    //create a div to make the meme image the background and size accordingly
     const imgUrl = document.getElementById('img-link').value;
-    const img = document.createElement('img');
-    img.src = imgUrl;
+    const divImg = document.createElement('div');
+    divImg.classList.add('meme-img')
+    divImg.style.backgroundImage = `url(${imgUrl})`;
     
     //top text
     const topText = document.createElement('div');
     topText.classList.add('text', 'top-text');
     topText.innerText = document.getElementById('top-txt').value;
-    
+
     //bottom text
     const bottomText = document.createElement('div');
     bottomText.classList.add('text', 'bottom-text');
@@ -31,26 +31,26 @@ form.addEventListener('submit',function(e){
     const deleteButton = document.createElement('div');
     deleteButton.classList.add('delete-x');
     deleteButton.innerText = 'X';
-    
+/* 
+    divImg.appendChild(topText);
+    divImg.appendChild(bottomText);
+    divImg.appendChild(deleteButton); */
+
+      memeDiv.appendChild(divImg);
+      memeDiv.appendChild(topText);
+      memeDiv.appendChild(bottomText);
+      memeDiv.appendChild(deleteButton); 
+  
     //add each element to memeDiv and add each memeDiv to memeContainer
     memeContainer.appendChild(memeDiv);
-    memeDiv.appendChild(img);
-    memeDiv.appendChild(topText);
-    memeDiv.appendChild(bottomText);
-    memeDiv.appendChild(deleteButton);
-
+  
     //scrolls to bottom of each meme generated 
-    
-    memeDiv.scrollIntoView(false);
-
-
-    //FORM VALIDATION- IF FIELDS NOT ENTERED 
-
-   /*  if (bottomText.value === '' && topText.value === '' && imgUrl.value === '') {
-        console.log('nothing');
-        memeDiv.style.display='none';
-    } */
-
+    memeContainer.scrollIntoView({
+        inline: 'end',
+        block: 'end',
+        behavior: 'smooth'
+    });
+   
 
     //event listeners for delete button
     memeDiv.addEventListener('mouseover', function() {
@@ -100,5 +100,17 @@ function scrollToTop() {
 scrollButton.addEventListener('click', scrollToTop);
 
 
+/* function changeTitleColors() {
+    const title = document.getElementById('title')
+    const chars = title.innerText.split('')
+    title.innerText = ''
+    chars.forEach((char) => {
+        const element = document.createElement('span')
+        element.style.color = Math.floor(Math.random()*16777215).toString(16);
+        element.innerText = char;
+        title.appendChild(element)
+    });
+}
 
-
+setInterval(changeTitleColors, 1000)
+ */
