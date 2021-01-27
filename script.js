@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 let memeCounter = 0;
 
-form.addEventListener('submit',function(e){
+form.addEventListener('submit',function(e) {
     e.preventDefault();
     const memeContainer = document.getElementById('memecontainer');
 
@@ -37,10 +37,7 @@ form.addEventListener('submit',function(e){
     divImg.appendChild(deleteButton);
 
       memeDiv.appendChild(divImg);
-     /*  memeDiv.appendChild(topText);
-      memeDiv.appendChild(bottomText);
-      memeDiv.appendChild(deleteButton);  */
-  
+    
     //add each element to memeDiv and add each memeDiv to memeContainer
     memeContainer.appendChild(memeDiv);
   
@@ -71,32 +68,13 @@ form.addEventListener('submit',function(e){
         }   
     }
 
-
-    /* memeDiv.addEventListener('mouseover', function() {
-        deleteButton.classList.add('delete-x--open');
-       
-    })
-
-    memeDiv.addEventListener('mouseout', function() {
-        deleteButton.classList.remove('delete-x--open');
-    })
-
-    
-    memeDiv.addEventListener('click', removeMeme);
-    function removeMeme(event) {
-        if (event.target.classList.contains('delete-x--open')) {
-            const memeDivEl = event.target.parentElement;
-            memeContainer.removeChild(memeDivEl);
-        }   
-    } */
     form.reset();
 
 })
 
-//Scroll to top functions
-const scrollButton = document.getElementById('scrollBtn');
+//Scroll button and scroll to top function
 
-const mainEl = document.documentElement;
+const scrollButton = document.getElementById('scrollBtn');
 
 window.addEventListener('scroll', activateScroll);
 
@@ -108,6 +86,8 @@ function activateScroll() {
     }
 }
 
+scrollButton.addEventListener('click', scrollToTop);
+
 function scrollToTop() {
     window.scroll({
         top: 0,
@@ -115,8 +95,8 @@ function scrollToTop() {
     });
 }
 
-scrollButton.addEventListener('click', scrollToTop);
 
+//change title colors effect (for fun)
 
 /* function changeTitleColors() {
     const title = document.getElementById('title')

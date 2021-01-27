@@ -1,6 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #bababa;
+    height: 100%;
+    position: relative;
+    margin: 0;
 }
+
 .main-container {
     font-family: Ubuntu, sans-serif;
     color: white;
@@ -8,21 +16,14 @@ body {
     justify-content: center;
     flex-direction:column;
     align-items: center;
-    max-width: 100%;
+    padding-bottom: 100px;
 }
 
 .main-container h1 {
     font-size: 64px;
     text-align: center;
 }
-/* @supports (-webkit-text-stroke: 1.5px white) {
-    .main-container h1 {
-        font-size: 64px;
-        font-family: Impact, Arial;
-        -webkit-text-fill-color: white;
-        -webkit-text-stroke: black 1.5px;
-    }
-} */
+
 /*Styling the form */
 
 .meme-form {
@@ -91,6 +92,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width:100%;
+    margin-top:32px;
 }
 
 .memeform {
@@ -99,25 +101,6 @@ body {
     margin: 4px;
 }
 
-/* .meme-image {
-    display:inline-block;   
-    position: relative;
-    width: 480px;
-    margin-bottom: 32px;
-    text-align: center;
-    animation: meme-display ease-in-out 400ms;
-    background-color: black;
-} */
-
-@keyframes meme-display {
-    0% {
-        opacity: 0;   
-      }
-    
-      100% {
-        opacity: 1;    
-      }
-}
 
 .meme-img {
     position:relative;
@@ -129,8 +112,16 @@ body {
     margin: 20px;
     text-align: center;
     animation: meme-display ease-in-out 400ms;
-    background-color: black;
-    z-index:1;
+}
+
+@keyframes meme-display {
+    0% {
+        opacity: 0;   
+      }
+    
+      100% {
+        opacity: 1;    
+      }
 }
 
 .meme-img:hover {
@@ -192,17 +183,6 @@ body {
     cursor: pointer;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    font-size: 20px;
-    color:white;
-    text-align: center;
-    width:100%;
-    font-family: Ubuntu, sans-serif;
-    margin-bottom: 16px;
-}
-
 .kat-link {
     text-decoration: none;
     color: white;
@@ -234,8 +214,13 @@ body {
         max-height: 240px;
         max-width:360px;
     }
+    .scroll-icon {
+        width:48px;
+        height:48px;
+    }
 }
 
 
  
 
+  
