@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #bababa;
+    background-color: #8c8c8c;
     height: 100%;
     position: relative;
     margin: 0;
@@ -11,7 +11,7 @@ body {
 
 .main-container {
     font-family: Ubuntu, sans-serif;
-    color: white;
+    color: #f5f948;
     display: flex;
     justify-content: center;
     flex-direction:column;
@@ -22,6 +22,7 @@ body {
 .main-container h1 {
     font-size: 64px;
     text-align: center;
+    color: #f5f948;
 }
 
 /*Styling the form */
@@ -47,42 +48,50 @@ body {
 .form-labels {
     font-family: Ubuntu, sans-serif;
     padding-left: 4px;
-    color: white;
+    color: #f5f948;
     align-self: flex-start;
 }
+
 
 .input-url, .input-top, .input-bottom {
     width: 100%;
     display: inline-block;
     box-sizing: border-box;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 16px 0;
     -webkit-appearance: none;
-    box-shadow: 4px 4px 2px 0px #888d8f;
+    box-shadow: 4px 4px 3px 1px #5d5f5f;
     border: 0;
     border-radius: 8px;
     font-size: 16px;
 }
 
+input:focus {
+    outline: none;
+}
+
 .submit-button {
-    background-color:#8a8c96;
+    font-family: Ubuntu, sans-serif;
+    background-color: #3392af;
     color:white;
     border: solid white 3px;
     padding: 12px;
     font-size: 20px;
     border-radius: 12px;
     align-self:center;
-    margin-bottom: 8px;
+    margin:12px 0;
     -webkit-appearance: none;
-    box-shadow: 4px 4px 4px #616361;
+    box-shadow: 4px 4px 4px #5f626b;
     border: 0;
     cursor: pointer;
 }
 
+.submit-button:focus {
+    border:none;
+}
 
 .submit-button:hover {
-    /* opacity: 0.8; */
-    box-shadow: 5px 5px 5px #bcf65a; 
+    box-shadow: 5px 5px 5px #b6ce69; 
 }
 /* Styling the meme container */
 
@@ -179,7 +188,7 @@ body {
     
 }
 #scrollBtn:hover {
-    opacity: 0.6;
+    fill:#3392af;
     cursor: pointer;
 }
 
@@ -199,7 +208,7 @@ body {
     }
 
     .main-container h1 {
-        font-size: 44px;
+        font-size: 36px;
     }
 
     .meme-form {
@@ -207,7 +216,37 @@ body {
     }
 
     .memeform {
-        max-width: 360px;
+        max-width: 344px;
+        font-size: 20px;
+    }
+
+    .meme-img {
+        max-height: 240px;
+        max-width:360px;
+    }
+    .scroll-icon {
+        width:48px;
+        height:48px;
+    }
+}
+
+@media screen and (max-width: 900px) and (orientation:landscape) {
+    
+    .main-container {
+        max-width: 100%;
+        margin: 8px 0;
+    }
+
+    .main-container h1 {
+        font-size: 36px;
+    }
+
+    .meme-form {
+        max-width:100%;
+    }
+
+    .memeform {
+        max-width: 400px;
     }
 
     .meme-img {

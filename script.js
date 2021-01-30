@@ -3,6 +3,7 @@ let memeCounter = 0;
 
 form.addEventListener('submit',function(e) {
     e.preventDefault();
+
     const memeContainer = document.getElementById('memecontainer');
 
     //creating a div for each meme generated
