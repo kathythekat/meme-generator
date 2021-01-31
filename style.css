@@ -91,7 +91,7 @@ input:focus {
 }
 
 .submit-button:hover {
-    box-shadow: 5px 5px 5px #b6ce69; 
+    box-shadow: 5px 4px 5px #c1e85cb3;
 }
 /* Styling the meme container */
 
@@ -112,15 +112,17 @@ input:focus {
 
 
 .meme-img {
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px 1px #524e4e;
     position:relative;
     height: 320px;
     width: 480px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 20px;
+    margin-bottom: 40px;
     text-align: center;
-    animation: meme-display ease-in-out 400ms;
+    animation: meme-display ease-in-out 500ms;
 }
 
 @keyframes meme-display {
@@ -172,10 +174,12 @@ input:focus {
     top: 0;
     font-size: 44px;
     padding:4px;
+    z-index: 3;
 }
 
 .delete-x--open:hover {
     cursor: pointer;
+    opacity: 1;
 }
 
 

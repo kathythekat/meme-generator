@@ -14,6 +14,11 @@ form.addEventListener('submit',function(e) {
 
     //create a div to make the meme image the background and size accordingly
     const imgUrl = document.getElementById('img-link').value;
+
+    if (imgUrl === '') {
+        return false;
+    }
+
     const divImg = document.createElement('div');
     divImg.classList.add('meme-img')
     divImg.style.backgroundImage = `url(${imgUrl})`;
@@ -37,7 +42,8 @@ form.addEventListener('submit',function(e) {
     divImg.appendChild(bottomText);
     divImg.appendChild(deleteButton);
 
-      memeDiv.appendChild(divImg);
+
+    memeDiv.appendChild(divImg);
     
     //add each element to memeDiv and add each memeDiv to memeContainer
     memeContainer.appendChild(memeDiv);
