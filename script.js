@@ -1,18 +1,14 @@
 const form = document.getElementById('form');
-let memeCounter = 0;
 
 form.addEventListener('submit',function(e) {
     e.preventDefault();
 
     const memeContainer = document.getElementById('memecontainer');
 
-    //creating a div for each meme generated
+    //create a div for each meme generated
     const memeDiv = document.createElement('div');
-    memeDiv.classList.add('meme-image');
-    memeDiv.id = `meme-${memeCounter}`;
-    memeCounter++;
 
-    //create a div to make the meme image the background and size accordingly
+    //create a div to make the meme image the background and size/style in css
     const imgUrl = document.getElementById('img-link').value;
 
     if (imgUrl === '') {
@@ -27,11 +23,24 @@ form.addEventListener('submit',function(e) {
     const topText = document.createElement('div');
     topText.classList.add('text', 'top-text');
     topText.innerText = document.getElementById('top-txt').value;
+        if (topText.innerText.length > 16) {
+            topText.style.fontSize = 40;
+        }
+        if (topText.innerText.length > 32) {
+            topText.style.fontSize = 32;
+        }
 
     //bottom text
     const bottomText = document.createElement('div');
     bottomText.classList.add('text', 'bottom-text');
     bottomText.innerText = document.getElementById('bottom-txt').value;
+        if (bottomText.innerText.length > 16) {
+            bottomText.style.fontSize = 40;
+        }
+       if (bottomText.innerText.length > 20) {
+            bottomText.style.fontSize = 32;
+        }
+    
     
     //delete button on meme 
     const deleteButton = document.createElement('div');
@@ -59,6 +68,7 @@ form.addEventListener('submit',function(e) {
     //event listeners for delete button
     divImg.addEventListener('mouseover', function() {
         deleteButton.classList.add('delete-x--open');
+        deleteButton.style.zIndex = 10;
        
     })
 
@@ -101,21 +111,3 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
-
-
-//change title colors effect (for fun)
-
-/* function changeTitleColors() {
-    const title = document.getElementById('title')
-    const chars = title.innerText.split('')
-    title.innerText = ''
-    chars.forEach((char) => {
-        const element = document.createElement('span')
-        element.style.color = Math.floor(Math.random()*16777215).toString(16);
-        element.innerText = char;
-        title.appendChild(element)
-    });
-}
-
-setInterval(changeTitleColors, 1000)
- */
