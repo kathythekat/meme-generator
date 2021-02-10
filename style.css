@@ -8,6 +8,7 @@ body {
     height: 100%;
     position: relative;
     margin: 0;
+    padding: 0;
 }
 
 .main-container {
@@ -22,7 +23,6 @@ body {
 
 .main-container h1 {
     font-size: 4rem;
-    text-align: center;
     color: #f5f948;
 }
 
@@ -55,14 +55,12 @@ body {
 
 input:focus {
     outline:none;
-    border:solid #3392af 3px;
+    border:solid #3392af 4px;
 }
 
 
 .input-url, .input-top, .input-bottom {
     width: 100%;
-    display: inline-block;
-    box-sizing: border-box;
     padding: 12px 20px;
     margin: 16px 0;
     -webkit-appearance: none;
@@ -126,7 +124,7 @@ input:focus {
     background-position: center;
     margin-bottom: 40px;
     text-align: center;
-    animation: meme-display cubic-bezier(0.57, -0.02, 0.43, 0.96) 500ms;
+    animation: meme-display ease-in-out 400ms;
 }
 
 @keyframes meme-display {
@@ -194,7 +192,7 @@ input:focus {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    z-index: 2;
+    z-index: 10;
     
 }
 #scrollBtn:hover {
